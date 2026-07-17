@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Matchmaking Scan</title>
+</head>
+<link rel="stylesheet" href="../CSS/matchmaking.css">
+<body>
+
+<div class="card">
+  <span class="eyebrow"><span class="sparkle">✦</span> AI Matchmaking Scan</span>
+
+  <h1>Scanning for Your Match</h1>
+  <p class="subtitle">Analyzing compatibility across interests, energy, and communication style to find the best possible connection.</p>
+
+  <div class="avatars">
+    <div class="avatar-block left">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="scanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#14161a" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#14161a" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="50" cy="50" r="46"/>
+          <circle class="ring-scan" cx="50" cy="50" r="46"/>
+        </svg>
+        <div class="avatar-core">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="name-pill">Me</span>
+    </div>
+
+    <div class="avatar-block right">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 100 100">
+          <circle class="ring-track" cx="50" cy="50" r="46"/>
+          <circle class="ring-scan" cx="50" cy="50" r="46"/>
+        </svg>
+        <div class="avatar-core">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="name-pill">Username</span>
+    </div>
+  </div>
+
+  <div class="slider-row">
+    <div class="slider-track"></div>
+    <div class="dot left"></div>
+    <div class="dot right"></div>
+    <div class="knob"></div>
+  </div>
+
+  <div class="status-stack">
+    <div class="status-pill analyzing" id="analyzingPill">
+      <span class="spinner"></span> Analyzing compatibility&hellip;
+    </div>
+    <div class="status-pill found" id="foundPill">
+      <span>✓</span> Match Found
+    </div>
+  </div>
+
+  <div class="footnote" id="footnote">
+    <span class="sparkle">✦</span> Subtle confidence boost detected <span class="sparkle">✦</span>
+  </div>
+</div>
+
+<script>
+  // Simulate the scan completing after a few seconds, then reveal the match state.
+  const analyzingPill = document.getElementById('analyzingPill');
+  const foundPill = document.getElementById('foundPill');
+  const footnote = document.getElementById('footnote');
+
+  setTimeout(() => {
+    analyzingPill.classList.add('hide');
+    foundPill.classList.add('show');
+    footnote.classList.add('show');
+  }, 3200);
+</script>
+
+</body>
+</html>
