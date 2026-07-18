@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Style.css
+   Global reset + shared base styles used across every page.
+   Load AFTER root.css, BEFORE the page-specific stylesheet.
+   ========================================================================== */
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 0%, #f5f6f7, var(--bg));
+  font-family: var(--font-base);
+  color: var(--ink);
+  padding: 40px 20px;
+}
+
+/* Common typography */
+h1{
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+p{
+  margin: 0;
+}
+
+.subtitle{
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Shared eyebrow / label pill (used on Matchmaking + AI Companion) */
+.eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.eyebrow svg{
+  width: 13px;
+  height: 13px;
+  stroke: var(--muted);
+}
+
+/* Shared card container look */
+.card, .app, .panel{
+  background: var(--card);
+}
+
+/* Shared form input base (login + chat composer) */
+input{
+  font-family: var(--font-base);
+  outline: none;
+  color: var(--ink);
+}
+
+input::placeholder{
+  color: #b2b4b9;
+}
+
+/* Shared button reset */
+button{
+  font-family: var(--font-base);
+  cursor: pointer;
+}
+
+/* Shared progress bar track/fill (AI Companion, extendable to others) */
+.bar-track{
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #f0f1f2;
+  overflow: hidden;
+}
+
+.bar-fill{
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+/* Shared status/name pill */
+.badge, .name-pill, .status-chip{
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Shared icon-in-circle pattern (avatars across all pages) */
+.icon-circle{
+  border-radius: 50%;
+  background: #fbfbfc;
+  border: 1px solid #ececef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle svg{
+  stroke: #3a3d42;
+}
+
+/* Scrollbar polish for any scrollable panes (e.g. chat messages) */
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #d8dade;
+  border-radius: 999px;
+}
+
+/* Reduced motion support, honored globally */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation: none !important;
+    transition: none !important;
+  }
+}
